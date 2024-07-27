@@ -1,0 +1,35 @@
+on:
+  push:
+    branches:
+      - main
+name: Deploy website on push
+jobs:
+  web-deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: NPM install
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+        run: npm ci
+
+      - name: Build Angular app
+        run: npm run build
+
+      - name: Echo directory info
+        run: |
+          ls
+          pwd
+
+      - name: Push files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.DOMDOM_FTP_SERVER }}
+          username: ${{ secrets.DOMDOM_FTP_USER }}
+          password: ${{ secrets.DOMDOM_FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./dist/app-client/browser/
