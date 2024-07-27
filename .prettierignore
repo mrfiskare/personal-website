@@ -39,6 +39,3 @@
 # Ignore documentation and build scripts
 /docs
 /build
-
-# Posta DSP design module
-src/modules/posta-clnt-shared-module
