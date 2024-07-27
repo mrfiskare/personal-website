@@ -34,4 +34,6 @@ jobs:
           username: ${{ secrets.DOMDOM_FTP_USER }}
           password: ${{ secrets.DOMDOM_FTP_PASSWORD }}
           protocol: ftps
+          server-dir: ./
+          dangerous-clean-slate: true
           local-dir: ./dist/app-client/browser/
