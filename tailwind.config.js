@@ -2,7 +2,16 @@
 module.exports = {
   content: ['./src/**/*.{html,ts}'],
   theme: {
-    extend: {}
+    extend: {
+      fontFamily: {
+        quicksand: ['Quicksand', 'sans-serif']
+      }
+    }
   },
-  plugins: []
+  plugins: [require('daisyui')],
+
+  daisyui: {
+    themes: ['emerald', 'dracula'],
+    darkTheme: 'dracula'
+  }
 };
