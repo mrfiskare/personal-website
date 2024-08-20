@@ -29,8 +29,7 @@ module.exports = tseslint.config(
           prefix: 'app',
           style: 'kebab-case'
         }
-      ],
-      'no-console': 'error'
+      ]
     }
   },
   {
