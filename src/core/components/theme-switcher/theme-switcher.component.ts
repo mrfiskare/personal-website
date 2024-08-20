@@ -9,21 +9,21 @@ import { Component, OnInit } from '@angular/core';
 export class ThemeSwitcherComponent implements OnInit {
   defaultTheme = 'emerald';
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
     this.loadTheme();
   }
 
-  switchTheme(): void {
+  protected switchTheme(): void {
     this.defaultTheme = this.defaultTheme === 'emerald' ? 'dracula' : 'emerald';
     this.applyTheme();
   }
 
-  applyTheme(): void {
+  protected applyTheme(): void {
     document.documentElement.setAttribute('data-theme', this.defaultTheme);
     localStorage.setItem('theme', this.defaultTheme);
   }
 
-  loadTheme(): void {
+  private loadTheme(): void {
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
       this.defaultTheme = savedTheme;
