@@ -11,7 +11,22 @@ module.exports = {
   plugins: [require('daisyui')],
 
   daisyui: {
-    themes: ['emerald', 'dracula'],
+    themes: [
+      {
+        emerald: {
+          ...require('daisyui/src/theming/themes')['emerald'],
+          accent: 'red',
+          secondary: 'teal',
+          'base-100': '#f9f9ff'
+        }
+      },
+      {
+        dracula: {
+          ...require('daisyui/src/theming/themes')['dracula'],
+          'base-100': '#353353'
+        }
+      }
+    ],
     darkTheme: 'dracula'
   }
 };
