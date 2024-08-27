@@ -56,13 +56,13 @@
                   "maximumError": "64kB"
                 }
               ],
-              "outputHashing": "none"
+              "outputHashing": "all"
             },
             "development": {
               "optimization": false,
               "extractLicenses": false,
               "sourceMap": true,
-              "outputHashing": "none"
+              "outputHashing": "all"
             }
           },
           "defaultConfiguration": "production"
