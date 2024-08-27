@@ -1,6 +1,12 @@
-<button
-  class="inline-block cursor-pointer rounded-md bg-gray-800 px-4 py-3 text-center text-sm font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-gray-900"
-  (click)="switchTheme()"
->
-  Switch to {{ defaultTheme === "emerald" ? "dark" : "light" }} theme
-</button>
+<div class="flex items-center justify-center h-full">
+  <ng-icon
+    *ngIf="defaultTheme === 'emerald'"
+    name="heroMoonSolid"
+    class="icon-class"
+  ></ng-icon>
+  <ng-icon
+    *ngIf="defaultTheme !== 'emerald'"
+    name="heroSunSolid"
+    class="icon-class"
+  ></ng-icon>
+</div>

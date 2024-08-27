@@ -1,10 +1,15 @@
 import { Component, OnInit } from '@angular/core';
+import { NgIcon, provideIcons } from '@ng-icons/core';
+import { heroMoonSolid, heroSunSolid } from '@ng-icons/heroicons/solid';
+import { NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-theme-switcher',
   templateUrl: './theme-switcher.component.html',
   styleUrls: ['./theme-switcher.component.scss'],
-  standalone: true
+  standalone: true,
+  imports: [NgIcon, NgIf],
+  providers: [provideIcons({ heroMoonSolid, heroSunSolid })]
 })
 export class ThemeSwitcherComponent implements OnInit {
   defaultTheme = 'emerald';
@@ -13,7 +18,7 @@ export class ThemeSwitcherComponent implements OnInit {
     this.loadTheme();
   }
 
-  protected switchTheme(): void {
+  public switchTheme(): void {
     this.defaultTheme = this.defaultTheme === 'emerald' ? 'dracula' : 'emerald';
     this.applyTheme();
   }
